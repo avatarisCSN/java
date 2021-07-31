@@ -1,0 +1,12 @@
+package lab10;
+
+public class lab10Main {
+	
+	
+	public static void main(String[] args) {
+		Exempler Red = new Exempler(10);
+	System.out.println(Red.size);
+
+	}
+
+}

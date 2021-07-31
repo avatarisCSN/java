@@ -1,0 +1,13 @@
+
+import java.util.Scanner;
+
+public class lab5 {
+
+	public static void main(String[] args) {
+		System.out.println("¬ведите числа");
+		Scanner scan = new Scanner(System.in);
+		int s = scan.nextInt();
+		System.out.println(s);
+	}
+
+}

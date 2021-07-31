@@ -1,0 +1,94 @@
+package application;
+	
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.event.ActionEvent;
+import java.io.*;
+import java.util.*;
+import javafx.scene.control.Button;
+
+import javafx.event.EventHandler;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+
+
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+
+
+public class Main extends Application {
+	int clicks = 0;
+
+
+
+
+	@Override
+	public void start(Stage primaryStage) throws Exception
+	{
+		Label label7 = new Label("введите дату и запустите программу");
+		
+		 Label label1 = new Label("число1");
+	        Label label2 = new Label("число2");
+	        Label label3 = new Label("число3");
+	        Label label4 = new Label("число4");
+	        Label label5 = new Label("число5");
+	        Label label6 = new Label("число6");
+	        
+	        
+	        TextField text1 = new TextField("дата1");
+	        TextField text2 = new TextField("дата2");
+	        TextField text3 = new TextField("дата3");
+	        
+	        Button btn = new Button("Старт");
+	        
+	     
+	        
+	        
+	    GridPane grid = new GridPane( );
+	    grid.add(label7, 1 , 0);
+	    grid.add(text1, 1 , 1);
+	    grid.add(text2, 2 , 1);
+	    grid.add(text3, 3 , 1);
+	    grid.add(btn, 1 , 2);
+		VBox vbox = new VBox(10, label1, label2, label3, label4, label5, label6);
+		
+	   
+	
+		    FlowPane root2 = new FlowPane(5, 5, grid, vbox);
+			
+			Scene scene = new Scene(root2,800,500);
+			
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("hello");
+			primaryStage.show();
+
+	}
+	public static void main(String[] args) {
+
+
+		launch(args);
+
+	}
+}

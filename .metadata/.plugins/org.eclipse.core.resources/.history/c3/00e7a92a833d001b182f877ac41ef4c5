@@ -1,0 +1,100 @@
+
+public class MAIN {
+	
+	
+	public static void main(String[] args) {
+		int x=5;
+		double nach_res= 60000 ;
+		double nach_rashod=2;
+		 int kolvo_poley;
+		 
+		double bonus_koef=1.25; 
+		double oaz_koef=0.5;
+		double mel_koef=0.25;
+		double pek_koef =0.25;
+		
+		int tier_now=0;
+		int a=0;
+		int b=0;
+		int c=0;
+		
+		
+		double vrem_nakop;
+		double vrem_summ=0;
+		
+		
+		double stoimost_sloya;
+	    double CVR_pola[] = {2, 3, 4, 6, 7, 11, 17, 20, 30, 45, 55, 80, 95, 120, 140, 165, 200, 300, 300, 400, 500};
+for (a=0;a<21;a++)
+{
+	CVR_pola[a]=CVR_pola[a]*5*(2)*bonus_koef;
+}
+		double sum_CVR;
+		double stoimost_pola[]= {250, 415, 695, 1165, 1945, 3250, 5420, 9055,15120, 25260, 42184, 70447, 117647, 196471, 328107, 547938, 915058, 1528146, 2552005, 4261848};
+		
+		  nach_res= nach_res-nach_rashod;
+		 
+		  sum_CVR= 2000+ CVR_pola[0]*15*5*(2)*bonus_koef;
+		 
+			 
+		
+		 
+		 
+		 
+		  
+		
+		 
+	for (a=0, b=0; tier_now < 10; a++, b++ , tier_now++)
+	{ 
+		if (tier_now==7)
+		{
+			nach_res=32000;
+		}
+		 if (tier_now==10)
+			{
+				nach_res=100000;
+			}
+		double  kolvo_poley2 =  nach_res/stoimost_pola[b];
+		 kolvo_poley =(int)kolvo_poley2;
+		 double ostatok= kolvo_poley2- kolvo_poley;
+		
+		
+
+		
+		 if (kolvo_poley > 14)
+		 {
+			  stoimost_sloya = stoimost_pola[b]*15;
+			  
+			  nach_res = nach_res - stoimost_sloya;
+			  sum_CVR= sum_CVR+  (CVR_pola[a+1]*15);
+			 
+		 }
+		 else
+		 {
+			 
+			 sum_CVR=sum_CVR+kolvo_poley*CVR_pola[a+1];
+		while ( kolvo_poley < 15)
+		{
+			
+			nach_res=0;
+			vrem_summ=vrem_summ-ostatok;
+			ostatok=0;
+			
+		  vrem_nakop = stoimost_pola[b]/sum_CVR;
+		  System.out.println(vrem_nakop);
+		  vrem_summ = vrem_summ+vrem_nakop;
+		  sum_CVR=sum_CVR+CVR_pola[a+1];
+			
+		  System.out.println(sum_CVR);
+		
+		 kolvo_poley = kolvo_poley+1;
+		  
+		}
+		kolvo_poley=0;
+		 }
+		
+	}
+	System.out.println(vrem_summ);
+	}
+}
+

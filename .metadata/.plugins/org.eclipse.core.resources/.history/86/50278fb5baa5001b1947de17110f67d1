@@ -1,0 +1,91 @@
+package application;
+	
+
+
+import java.util.StringTokenizer;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ListView;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.collections.FXCollections;
+import javafx.geometry.Orientation;
+  
+public class Main extends Application{
+     
+    public static void main(String[] args) {
+          
+        Application.launch(args);
+    }
+      
+    @Override
+    public void start(Stage stage) throws Exception {
+          
+        TextField textField = new TextField();
+         
+        ObservableList<String> langs = FXCollections.observableArrayList();
+        ListView<String> langsListView = new ListView<String>(langs);
+        langsListView.setPrefSize(250, 150);
+         
+        Button addBtn = new Button("Add");
+        Button deleteBtn = new Button("Delete");
+        Button btn = new Button("split");
+        Button enterNumVaR = new Button("enter num of Var");
+        Text variablesTxt = new Text("");
+        FlowPane buttonPane = new FlowPane(10, 10, textField, addBtn, deleteBtn, btn, enterNumVaR , variablesTxt);
+        buttonPane.setPrefSize(450, 50);
+         
+        addBtn.setOnAction(event -> langs.add(textField.getText()));
+        deleteBtn.setOnAction(event -> langs.remove(textField.getText()));
+           int x;
+        EventHandler<ActionEvent> eventHandler2 = 
+      		   new EventHandler<ActionEvent>() { 
+         	@Override 
+  		   public void handle(ActionEvent e) { 
+  			  
+  			   int d = Integer.parseInt(textField.getText());
+  			   final int x=d;
+  			  
+  		                   
+  		   } 
+         };
+         
+         variables.setOnAction(eventHandler2);
+        
+        EventHandler<ActionEvent> eventHandler = 
+        		   new EventHandler<ActionEvent>() { 
+        		   
+        		   @Override 
+        		   public void handle(ActionEvent e) { 
+        			   String str = textField.getText();
+        			    int[][] mass = proces.addToMass(proces.TxtToInt(str, x), x);
+        			   
+        		                   
+        		   } 
+        		};    
+        
+            btn.setOnAction(eventHandler);
+            
+           
+        	
+        
+        
+         
+        FlowPane root = new FlowPane(Orientation.VERTICAL, 10, 10, buttonPane, langsListView);
+         
+        Scene scene = new Scene(root, 500, 350);
+          
+        stage.setScene(scene);
+        stage.setTitle("ListView in JavaFX");
+        stage.show();
+        
+      
+    }
+}

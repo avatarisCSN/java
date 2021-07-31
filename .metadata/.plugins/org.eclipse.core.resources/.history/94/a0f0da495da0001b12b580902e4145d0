@@ -1,0 +1,167 @@
+package application;
+	
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+
+
+
+
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.event.ActionEvent;
+import java.io.*;
+import java.util.*;
+
+
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+
+
+public class Main extends Application {
+
+	//Label response;
+
+	static TextField textField1;
+	static TextField textField2;
+	static TextField textField3;
+	static TextField textField4;
+	static TextField textField5;
+	static TextField textField6;
+	static TextField textField7;
+	static ListView<String> ObjUsListView;
+
+
+
+
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+
+			
+
+			primaryStage.setTitle("Курсовая работа по КПП Сиромля");
+			primaryStage.setWidth(800);
+		    primaryStage.setHeight(600);
+
+
+		      Text text1 = new Text("Номер рейса");
+		      Text text2 = new Text("Найменування рейса");
+		      Text text3 = new Text("Тип літака");
+		      Text text4 = new Text("Вартість квітка");
+		      Text text5 = new Text("Довжина маршрута");
+		      Text text6 = new Text("Количество записей");
+		      Text text7 = new Text("        ");
+
+		
+
+
+		      textField1 = new TextField();
+		      textField2 = new TextField();
+		      textField3 = new TextField();
+		      textField4 = new TextField();
+		      textField5 = new TextField();
+
+
+		      Button button1 = new Button("Добавление в буфер");
+		      Button button2 = new Button("Запись в файл");
+
+		      GridPane gridPane = new GridPane();
+
+		      gridPane.setMinSize(400, 200);
+
+		      gridPane.setPadding(new Insets(10, 10, 10, 10));
+
+		      gridPane.setVgap(5);
+		      gridPane.setHgap(5);
+
+		      gridPane.setAlignment(Pos.CENTER);
+
+		      gridPane.add(text1, 0, 0);
+		      gridPane.add(textField1, 0, 1);
+		      gridPane.add(text2, 1, 0);
+		      gridPane.add(textField2, 1, 1);
+		      gridPane.add(text3, 2, 0);
+		      gridPane.add(textField3, 2, 1);
+		      gridPane.add(text4, 3, 0);
+		      gridPane.add(textField4, 3, 1);
+		      gridPane.add(text5, 4, 0);
+		      gridPane.add(textField5, 4, 1);
+		      gridPane.add(button1, 0, 3);
+		      gridPane.add(button2, 4, 3);
+		      gridPane.add(text6, 2, 3);
+		      gridPane.add(text7, 3, 3);
+
+		     
+
+
+		      VBox vbox = new VBox();
+
+			    vbox.setSpacing(10);
+			    Button btn3 = new Button("Чтение файла");
+			    Button btn4 = new Button("Очистка");
+			    Button btn5 = new Button("Поиск");
+			    Button btn6 = new Button("Поиск");
+			    ChoiceBox locationchoiceBox = new ChoiceBox();
+			      locationchoiceBox.getItems().addAll
+			         ("Номер рейса", "Найменування рейса", "Тип літака", "Вартість квітка", "Довжина маршрута");
+			    Button btn8 = new Button("Запись");
+			    TextField textField6 = new TextField();
+			    TextField textField7 = new TextField();
+
+			
+			   vbox.getChildren().addAll(btn3, btn4, btn5, textField6,locationchoiceBox );
+			    vbox.setPadding(new Insets(10, 10, 10, 10));
+			  
+
+			    ObservableList<String> names = FXCollections.observableArrayList(
+			            "1", "2");
+			        // ListView<String>
+			         ObjUsListView = new ListView<String>(names);
+
+
+			         VBox vbox2 = new VBox();
+
+					    vbox2.setSpacing(10);
+					    Text text10 = new Text("Вывод");
+
+
+							    vbox2.getChildren().addAll(text10, ObjUsListView );
+
+
+
+		    BorderPane root2 = new BorderPane();
+			root2.setTop(gridPane);
+			root2.setRight(vbox);
+			root2.setCenter( vbox2);
+			Scene scene = new Scene(root2,800,500);
+			
+			primaryStage.setScene(scene);
+			primaryStage.show();
+
+
+
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+
+
+		launch(args);
+
+	}
+}

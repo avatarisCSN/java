@@ -1,0 +1,49 @@
+package application;
+
+import javafx.scene.Scene;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+
+public class Scenes  {
+	
+	static Button btn21= new Button("Расчет матрицы");
+	static	Button btn22= new Button("Расчет потенциала");
+	static	Button btn23= new Button("Справка по квадратам");
+	
+	
+	
+	static    HBox menu2 = new HBox(btn21, btn22, btn23);
+	static   Scene MainScene2 = new Scene(menu2,800,500);
+		    
+	static Button btn31= new Button("Расчет матрицы");
+	static Button btn32= new Button("Расчет потенциала");
+	static Button btn33= new Button("Справка по квадратам");
+	static HBox menu3 = new HBox(btn31, btn32, btn33);
+	
+	 static GridPane gridpane = new GridPane( );
+	static ColumnConstraints column = new ColumnConstraints(100);
+   static Scene MainScene3 = new Scene(menu3,800,500);
+   
+}
+
+
+
+  
+	 
+	  
+	  
+	  
+
+

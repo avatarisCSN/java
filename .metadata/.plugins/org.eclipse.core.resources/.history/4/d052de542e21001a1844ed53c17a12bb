@@ -1,0 +1,23 @@
+package Main;
+
+public class MainClass {
+String text = null;
+	public MainClass()
+	{
+		this.text ="I m programmer";
+	}
+	public setText(String text) 
+	{
+		this.text=text;
+	}
+	public wtiteText () 
+	{
+	System.out.println(text);
+	}
+	public static void main(String[] args)
+	{
+		new MainClass();
+		MainClass.writeText();
+		system("pause")
+	}
+}

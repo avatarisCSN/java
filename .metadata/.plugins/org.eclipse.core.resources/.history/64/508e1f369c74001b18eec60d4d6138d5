@@ -1,0 +1,145 @@
+package application;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Orientation;
+
+import java.awt.TextField;
+
+import org.o7planning.javafx.utils.MyImageUtils;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    @Override
+    public void start(Stage stage) {
+ 
+        // Create MenuBar
+        MenuBar menuBar = new MenuBar();
+        
+        // Create menus
+        Menu fileMenu = new Menu("File");
+        Menu OptionsMenu = new Menu("Options");
+        Menu helpMenu = new Menu("Help");
+       
+        Menu Colors = new Menu("Colors");
+        Menu Priority = new Menu("Priority");
+        
+        
+        
+        
+          
+        
+        
+        // Create MenuItems
+        MenuItem newItem = new MenuItem("Open");
+        MenuItem openFileItem = new MenuItem("Close");
+        MenuItem saveFileItem = new MenuItem("Save");
+        SeparatorMenuItem separItem = new SeparatorMenuItem();
+        MenuItem exitItem = new MenuItem("Exit");
+        MenuItem About = new MenuItem("About");
+        Image newImage = MyImageUtils.getImage("/org/o7planning/javafx/icon/icon1.png");
+        About.setGraphic(new ImageView(newImage));
+        
+        Label lbl = new Label();
+        TextField textField = new TextField();
+        
+        
+        
+        MenuItem Reset = new MenuItem("Reset");
+        
+        
+        exitItem.setAccelerator(KeyCombination.keyCombination("Ctrl+X"));
+        newItem.setAccelerator(KeyCombination.keyCombination("Ctrl+V"));
+        saveFileItem.setAccelerator(KeyCombination.keyCombination("Ctrl+C"));
+        openFileItem.setAccelerator(KeyCombination.keyCombination("Ctrl+Z"));
+        
+        
+       
+
+        
+        
+        TextArea textArea = new TextArea();
+        textArea.setMinHeight(100);
+        
+        ToggleGroup toggleGroup = new ToggleGroup();
+
+        RadioMenuItem radioItem1 = new RadioMenuItem("Red");
+        radioItem1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("radio1 toggled");
+            }
+        });
+        radioItem1.setToggleGroup(toggleGroup);
+        RadioMenuItem radioItem2 = new RadioMenuItem("Green");
+        radioItem2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("radio2 toggled");
+            }
+        });
+        radioItem2.setToggleGroup(toggleGroup);
+        RadioMenuItem radioItem3 = new RadioMenuItem("Blue");
+        radioItem3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("radio3 toggled");
+            }
+        });
+        radioItem3.setToggleGroup(toggleGroup);
+
+        
+        
+        
+     // When user click on the Exit item.
+     exitItem.setOnAction(new EventHandler<ActionEvent>() {
+      
+         @Override
+         public void handle(ActionEvent event) {
+             System.exit(0);
+         }
+     });
+        
+        // Add menuItems to the Menus
+        fileMenu.getItems().addAll(newItem, openFileItem, saveFileItem , separItem, exitItem);
+        OptionsMenu.getItems().addAll(Colors , Priority , separItem, Reset);
+        Colors.getItems().addAll(radioItem1, radioItem2, radioItem3);
+        Priority.getItems().addAll();
+        helpMenu.getItems().addAll(About );
+        
+        // Add Menus to the MenuBar
+        menuBar.getMenus().addAll(fileMenu, OptionsMenu, helpMenu);
+        
+        BorderPane root = new BorderPane();
+       
+   
+        
+        root.setTop(menuBar);
+        Scene scene = new Scene(root, 500, 300);
+        
+        stage.setTitle("JavaFX Menu (o7planning.org)");
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+ 
+}

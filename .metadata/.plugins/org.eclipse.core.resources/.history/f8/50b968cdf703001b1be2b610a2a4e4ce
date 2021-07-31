@@ -1,0 +1,17 @@
+package lab10;
+
+public class Exempler {
+	
+
+	
+ int size;
+
+public Exempler(int s) {
+size=s;
+}
+
+public void setSize( int s) {
+ size=s;
+}
+
+}
