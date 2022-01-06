@@ -17,6 +17,8 @@ import javafx.geometry.Pos;
 import javafx.event.ActionEvent;
 import java.io.*;
 import java.util.*;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.paint.Color;
 
 import javax.swing.JLabel;
 
@@ -89,25 +91,40 @@ public class Main extends Application {
 	        TextField text2 = new TextField("дата2");
 	        TextField text3 = new TextField("дата3");
 	        
-	        Text text10 = new Text(" ");
-	        Text text11 = new Text(" ");
-	        Text text12 = new Text(" ");
-	        Text text13 = new Text(" ");
-	        Text text14 = new Text(" ");
-	        Text text15 = new Text(" ");
-	        Text text16 = new Text(" ");
-	        Text text17 = new Text(" ");
-	        Text text18 = new Text(" ");
-	        Text text19 = new Text(" ");
-	        Text text110 = new Text(" ");
-	        Text text111 = new Text(" ");
-	        Text text112 = new Text(" ");
-	        Text text24 = new Text(" ");
-	        Text text25 = new Text(" ");
-	        Text text26 = new Text(" ");
-	        Text text27 = new Text(" ");
-	        
-	        
+	        TextField text10 = new TextField(" ");
+	        text10.setEditable(false);
+	        TextField text11 = new TextField(" ");
+	        text11.setEditable(false);	        
+	        TextField text12 = new TextField(" ");
+	        text12.setEditable(false);	        
+	        TextField text13 = new TextField(" ");
+	        text13.setEditable(false);	      
+	        TextField text14 = new TextField(" ");
+	        text14.setEditable(false);	        
+	        TextField text15 = new TextField(" ");
+	        text15.setEditable(false);	       
+	        TextField text16 = new TextField(" ");
+	        text16.setEditable(false);	      
+	        TextField text17 = new TextField(" ");
+	        text17.setEditable(false);	        
+	        TextField text18 = new TextField(" ");
+	        text18.setEditable(false);	   
+	        TextField text19 = new TextField(" ");
+	        text19.setEditable(false);
+	        TextField text110 = new TextField(" ");
+	        text110.setEditable(false);
+	        TextField text111 = new TextField(" ");
+	        text111.setEditable(false);
+	        TextField text112 = new TextField(" ");
+	        text112.setEditable(false);
+	        TextField text24 = new TextField(" ");
+	        text24.setEditable(false);
+	        TextField text25 = new TextField(" ");
+	        text25.setEditable(false);
+	        TextField text26 = new TextField(" ");
+	        text26.setEditable(false);
+	        TextField text27 = new TextField(" ");
+	        text27.setEditable(false);
 	        
 	        
 	        
@@ -126,30 +143,77 @@ public class Main extends Application {
 	                
 	                chislo2=processing.Main(text1.getText(), text2.getText(), text3.getText());
 	                String i2[] = new String[17];
-	                 i2=processing.matrToString(processing.numbers12(text1.getText(), text2.getText(), text3.getText(), chislo2));
+	                int[][] i3 = new int[2][17];
+	                i3=processing.numbers12(text1.getText(), text2.getText(), text3.getText(), chislo2);
+	                 i2=processing.matrToString(i3);
 	                 text10.setText(i2[0]);
+	                  String temp = processing.digit03(i3[0][0]);           
+	                  text10.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text11.setText(i2[1]);
+	                 temp = processing.digit12(i3[0][1]);           
+	                 text11.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text12.setText(i2[2]);
+	                 temp = processing.digit12(i3[0][2]);           
+	                 text12.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text13.setText(i2[3]);
+	                  temp = processing.digit03(i3[0][3]);
+	                 text13.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text14.setText(i2[4]);
+	                 temp = processing.digit4_more(i3[0][4]);
+	                 text14.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text15.setText(i2[5]);
+	                 temp = processing.digit4_more(i3[0][5]);
+	                 text15.setStyle("-fx-background-color:"+ temp +";");
+	                 	
 	                 text16.setText(i2[6]);
+	                 temp = processing.digit4_more(i3[0][6]);
+	                 text16.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text17.setText(i2[7]);
+	                 temp = processing.digit4_more(i3[0][7]);
+	                 text17.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text18.setText(i2[8]);
+	                 temp = processing.digit4_more(i3[0][8]);
+	                 text18.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text19.setText(i2[9]);
+	                 temp = processing.digit4_more(i3[0][9]);
+	                 text19.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text110.setText(i2[10]);
+	                 temp = processing.digit4_more(i3[0][10]);
+	                 text110.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text111.setText(i2[11]);
+	                 temp = processing.digit4_more(i3[0][11]);
+	                 text111.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text112.setText(i2[12]);
+	                 temp = processing.digit4_more(i3[0][12]);
+	                 text112.setStyle("-fx-background-color:"+ temp +";");
+	                 
 	                 text24.setText(i2[13]);
+	                 
 	                 text25.setText(i2[14]);
+	                
 	                 text26.setText(i2[15]);
+	                
 	                 text27.setText(i2[16]);
+	              
+	               
 	                 
 	               
 	               
 					
 					
 	                label1.setText(Integer.toString(chislo2[0]));
+	                label1.setStyle("-fx-background-color: red ;");
 	                label2.setText(Integer.toString(chislo2[1]));
 	                label3.setText(Integer.toString(chislo2[2]));
 	                label4.setText(Integer.toString(chislo2[3]));
@@ -162,10 +226,7 @@ public class Main extends Application {
 	        
 	    GridPane grid = new GridPane( );
 	    
-	    grid.getColumnConstraints().add(new ColumnConstraints(60));
-        grid.getColumnConstraints().add(new ColumnConstraints(60));
-        grid.getColumnConstraints().add(new ColumnConstraints(60));
-        grid.getColumnConstraints().add(new ColumnConstraints(60));
+	   
          
         grid.setGridLinesVisible(true); // делаем видимой сетку строк и столбцов
        
@@ -260,6 +321,7 @@ public class Main extends Application {
 			     Label lbl5_1 = new Label("¬ведите мес€ц и год");
 			        TextField text5_1 = new TextField("мес€ц");
 			        TextField text5_2 = new TextField("год");
+			        
 			        Button btn5_1_1 = new Button("start");
 			        
 			       

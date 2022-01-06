@@ -280,7 +280,57 @@ public class processing {
 		
 		return lambo;
 	}
-	
+	public static String digit03 (int i)
+	{
+		String color="";
+		if(i==2)
+		{
+			color="Green";
+		}
+		if(i<2)
+		{
+			color="Yellow";
+		}
+		if(i>2)
+		{
+			color="Red";
+		}
+		return color;
+	}
+	public static String digit12 (int i)
+	{
+		String color="";
+		if(i==3)
+		{
+			color="green";
+		}
+		if(i<3)
+		{
+			color="yellow";
+		}
+		if(i>3)
+		{
+			color="red";
+		}
+		return color;
+	}
+	public static String digit4_more (int i)
+	{
+		String color="";
+		if(i==1)
+		{
+			color="green";
+		}
+		if(i<1)
+		{
+			color="yellow";
+		}
+		if(i>1)
+		{
+			color="red";
+		}
+		return color;
+	}
 	
 	}
 
