@@ -1,4 +1,4 @@
-package sql_tester;
+package packageSQL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public  class MysqlConnect {
 	
 	
-	
+			
 	// Connect to MySQL
 	   public static Connection getMySQLConnection() throws SQLException,
 	           ClassNotFoundException {
