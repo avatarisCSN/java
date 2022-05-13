@@ -38,10 +38,10 @@ public class proces {
 			   while (tokenizer2.hasMoreTokens())
 			   {
 				   
-				   
+				 //  System.out.println(x);
 			      String token2 = tokenizer2.nextToken();
 			      Splitted[c2] = token2; 
-			      System.out.println(token2);
+			      System.out.println(token2+"hello");
 			      c2++;
 			       
 			   }   
