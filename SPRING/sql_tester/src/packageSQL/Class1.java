@@ -13,13 +13,11 @@ public class Class1 {
 	
 	
 	
-	public static void main (String[] args) throws SQLException,
-    ClassNotFoundException {
-		{
-	
-	
-		Connection connection = MysqlConnect.getMySQLConnection();
-		String c="hello";
+	public static void main (String[] args)  {
+		Connection connection;
+		try {
+			connection = MysqlConnect.getMySQLConnection();
+
 		Statement statement = connection.createStatement();
 		String sql_query =  "Show Columns from developers";
 		ResultSet rs = statement.executeQuery(sql_query);
@@ -29,8 +27,13 @@ public class Class1 {
 		     }
 		connection.close();
 		System.out.println("table is changed");
-		}	
+		} catch (ClassNotFoundException | SQLException e) {
+		e.printStackTrace();
+			}	
 		
-	}
+		}	
 
-}
+		}	
+	
+
+

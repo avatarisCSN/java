@@ -16,6 +16,9 @@ public class MainPackage
     public static void main(String[] args) 
     {
         new MainPackage();
-        System.exit(0);
+     String s="hello";
+     s+=" abababa"+"sasasasattgtgtgtgt!";
+    s =s.substring(0, s.length()-1);
+     System.out.println(s);
     }
 }

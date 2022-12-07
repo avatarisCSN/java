@@ -4,7 +4,7 @@ public class MAIN {
 	
 	public static void main(String[] args) {
 		
-		double nach_res= 40000 ;
+		double nach_res= 375000 ;
 		double nach_rashod=0;
 		 int kolvo_poley;
 		 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title>HTML Editor - Full Version</title>
+</head>
+<body>
+<style>
+#fix{ position: fixed; margin-left: 25%; overflow: scroll;}
+
+</style>
+<table width="50%" border="0"  id="fix" align="center">
+  <tr>
+	<td colspan="3" align="center" bgcolor="#CCCCCC">апор</td>
+  </tr>
+  <tr>
+	<td width="150" valign="top" bgcolor="#CCCCCC">апор</td>
+	<td width="240"><table width="100%" border="0" >
+	  <tr>
+		<td><p> </p>
+		  <p>вап</p>
+		  <p>рвап</p>
+		  <p>рвапр</p>
+		  <p>вапр</p>
+		  <p>вапр</p>
+		  <p>вапр</p>
+		  <p>вапр</p>
+		  <p>вап</p>
+		  <p>р</p>
+		  <p>впр</p>
+		  <p>вап</p>
+		  <p>р</p>
+		  <p> </p>
+		  <p>вар</p>
+		  <p>впр</p>
+		  <p>вар</p>
+		  <p>вапрв</p>
+		  <p>пр</p>
+		  <p>sdfg</p>
+		  <p>sdfg</p>
+		  <p>sdfg</p>
+		  <p>sdfg</p>
+		  <p>sdfg</p>
+		  <p>вапр</p>
+		  <p>вапр</p></td>
+	  </tr>
+	</table></td>
+	<td width="150" align="center" valign="top" bgcolor="#CCCCCC">апор</td>
+  </tr>
+</table>
+	</tbody>
+</table>
+</body>
+</html>

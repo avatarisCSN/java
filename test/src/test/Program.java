@@ -29,6 +29,10 @@ public class Program {
 		    while (matcher.find()) {
 		        System.out.println(text.substring(matcher.start(), matcher.end()));
 		    }
+		    long c = 9223372036854775807l;
+		    System.out.println(c);
+		    float b =c;
+		    System.out.println(b);
 	
  }
 
